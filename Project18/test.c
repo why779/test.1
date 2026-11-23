@@ -1,17 +1,22 @@
-
-//è®¡ç®—1ï¼+2ï¼+...+10!
+//ÔÚÒ»¸öÓĞĞòÊı×éÖĞ²éÕÒ¾ßÌåµÄÄ³¸öÊı×Ön//
 #include<stdio.h>
 int main()
 {
-	int i = 1;
-	int n = 0;
-	int ret = 1;
-	int sum = 0;
-	for (n = 1;n <= 3;n++)
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int k = 7;
+	int i = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	for (i = 0;i < sz;i++)
 	{
-		ret = ret * n;
-		sum = sum + ret;
+		if (arr[i] == k)
+		{
+			printf("ÕÒµ½ÁË£¬ÏÂ±êÊÇ£º%d\n", i);
+			break;
+		}
 	}
-	printf("%d\n", sum);
+	if (i == sz)
+	{
+		printf("ÕÒ²»µ½\n");
+	}
 	return 0;
 }
