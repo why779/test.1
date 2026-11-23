@@ -1,4 +1,4 @@
-//在一个有序数组中查找具体的某个数字n//
+//在一个有序数组中查找具体的某个数字n  二分法//
 #include<stdio.h>
 int main()
 {
@@ -6,17 +6,25 @@ int main()
 	int k = 7;
 	int i = 0;
 	int sz = sizeof(arr) / sizeof(arr[0]);
-	for (i = 0;i < sz;i++)
+	int left = 0;
+	int right = sz - 1;
+
+	while (left <= right)
 	{
-		if (arr[i] == k)
+		int mid = (left + right) / 2;
+		if (arr[mid] < k)
 		{
-			printf("找到了，下标是：%d\n", i);
+			left = mid + 1;
+		}
+		else if (arr[mid] > k)
+		{
+			right = mid - 1;
+		}
+		else
+		{
+			printf("找到了，下标是：%d\n", mid);
 			break;
 		}
-	}
-	if (i == sz)
-	{
-		printf("找不到\n");
 	}
 	return 0;
 }
