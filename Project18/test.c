@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+#include<windows.h>
 int main()
 {
 	char arr1[] = "welcome to bit!!!";
@@ -16,7 +17,7 @@ int main()
 		arr2[right] = arr1[right];
 		printf("%s\n", arr2);
 		Sleep(1000);
-		system("cls");
+		system("cls");//system是一个库函数，可以执行系统命令
 		left++;
 		right--;
 	}
