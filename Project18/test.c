@@ -1,30 +1,22 @@
-//在一个有序数组中查找具体的某个数字n  二分法//
+//编写代码，演示多个字符从两端移动，向中间汇聚
 #include<stdio.h>
 int main()
 {
-	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int k = 7;
-	int i = 0;
-	int sz = sizeof(arr) / sizeof(arr[0]);
+	char arr1[] = "welcome to bit!!!";
+	char arr2[] = "#################";
+
 	int left = 0;
-	int right = sz - 1;
+	int right = strlen(arr2)-1;
 
 	while (left <= right)
 	{
-		int mid = (left + right) / 2;
-		if (arr[mid] < k)
-		{
-			left = mid + 1;
-		}
-		else if (arr[mid] > k)
-		{
-			right = mid - 1;
-		}
-		else
-		{
-			printf("找到了，下标是：%d\n", mid);
-			break;
-		}
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+		printf("%s\n", arr2);
+		left++;
+		right--;
 	}
+	
+
 	return 0;
 }
