@@ -1,5 +1,6 @@
 //编写代码，演示多个字符从两端移动，向中间汇聚
 #include<stdio.h>
+#include<string.h>
 int main()
 {
 	char arr1[] = "welcome to bit!!!";
